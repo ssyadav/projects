@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<ui:composition template="../template/layout.xhtml">
+
+<ui:param name="pageTitle" value="#{msgs.TITLE}" />
+	 <ui:define name="content">
+	 	<div id="breadCrums">
+	 		<ul>
+				<ui>
+				<h:outputLink id="link1" value="../pages/help.xhtml">
+					<h:outputText value="#{msgs.COMMON_CRUM_PAGE}" />
+				</h:outputLink>
+				</ui>
+				<ui>
+					<h:outputText value="#{msgs.twoSpace}" escape="false" />
+					<h:outputText value=">>" />
+					<h:outputText value="#{msgs.twoSpace}" escape="false" />
+					<h:outputText value="Help" />
+				</ui>
+			</ul>
+		</div>
+		<h:form id="helpForm">
+		<div style="width:1200px" >
+			<br></br><br></br>
+		<u>	<h:outputText value="Login Page :"  style="font-size: 1.5em;color: red;"/></u><br></br><br></br>
+			<h:graphicImage 	url="../resources/images/login.gif" />
+			<br></br><br></br>
+		<u>	<h:outputText value="Search Page :"  style="font-size: 1.5em;color: red;"/></u><br></br><br></br>
+			<h:graphicImage 	url="../resources/images/search.gif" />
+			<br></br><br></br>
+		<u>	<h:outputText value="Search Result Page :"  style="font-size: 1.5em;color: red;"/></u><br></br><br></br>
+			<h:graphicImage 	url="../resources/images/searchresult.gif" />
+			<br></br><br></br>
+		<u>	<h:outputText value="Insert Page :"  style="font-size: 1.5em;color: red;"/></u><br></br><br></br>
+			<h:graphicImage 	url="../resources/images/insert.gif" />
+			<br></br><br></br>
+		<u>	<h:outputText value="Update Page :"  style="font-size: 1.5em;color: red;"/></u><br></br><br></br>
+			<h:graphicImage 	url="../resources/images/update.gif" />
+			<br></br><br></br>
+		<u>	<h:outputText value="Insert Or Update Success :"  style="font-size: 1.5em;color: red;"/></u><br></br><br></br>
+			<h:graphicImage 	url="../resources/images/insertsuccess.gif" />
+			<br></br><br></br>
+			<u>	<h:outputText value="Note :"  style="font-size: 1.5em"/></u><br></br>
+			<h:outputText value="Please take your data back-up every day/week/month and save the excle file other then the operating system installed drive. if software or database currept we will not be responsible for anything.This is a paid software, please do not use this software without license."  style="font-size: 1.5em;color: red;"/><br></br>
+		</div>
+	 </h:form>
+	</ui:define>
+</ui:composition>
+</html>

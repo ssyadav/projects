@@ -1,0 +1,239 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:widget="http://java.sun.com/jsf/composite/widget">
+
+<ui:composition template="../template/layout.xhtml">
+
+<ui:param name="pageTitle" value="#{msgs.TITLE}" />
+	 <ui:define name="content">
+	 	<div id="breadCrums">
+	 		<ul>
+				<ui>
+					<h:outputLink id="link1" value="../pages/search.xhtml">
+						<h:outputText value="#{msgs.COMMON_CRUM_PAGE}" />
+					</h:outputLink>
+				</ui>
+				<ui>
+					<h:outputText value="#{msgs.twoSpace}" escape="false" />
+					<h:outputText value=">>" />
+					<h:outputText value="#{msgs.twoSpace}" escape="false" />
+					<h:outputText value="Search" />
+				</ui>
+			</ul>
+		</div>
+		<div id="content">
+		<h:form id="searchForm">
+			 <h:inputHidden id="user" value="#{loginBean.sessionUserId}"></h:inputHidden>
+			<div id="messagingContainer" style="padding-top:10px">
+				<h:messages id="homeErrorForm" style="color:red" errorClass="error" infoClass="success" warnClass="warning"/>
+				 <div id="messaging"></div>  
+				
+			</div>
+			
+			<div id="searchtable">
+				<table class="searchtable">
+					<tr>
+						<td style="padding-left:30px">
+							<h:outputText value="#{msgs.REGNUM}" />
+						</td>
+						<td>
+							<h:inputText value="#{commonBean.searchDO.regNum}" id="regNo" style="#{commonBean.searchDO.regNumError ?' border-color:red':''}" maxlength="2000"/>
+						</td>
+						<td style="padding-left:200px">
+							<h:outputText value="Owner First Name:" />
+						</td>
+						<td>
+							<h:inputText value="#{commonBean.searchDO.ownername}" maxlength="2000"/>
+						</td>
+					</tr>
+					<tr>
+						<td style="padding-left:30px">
+							<h:outputText value="#{msgs.FITNESS_VALIDITY}" />
+						</td>
+						<td>
+							<h:inputText value="#{commonBean.searchDO.fitnessValidity}" id="fExpDate"  onfocus="populateDate(this.id)" maxlength="10"/>
+						</td>
+						<td style="padding-left:200px">
+							<h:outputText value="#{msgs.INSURANCE_VALIDITY}" />
+						</td>
+						<td>
+							<h:inputText value="#{commonBean.searchDO.insuranceValidity}" id="iExpdate"  onfocus="populateDate(this.id)" maxlength="10"/>
+						</td>
+					</tr>
+					<tr>
+						<td style="padding-left:30px">
+							<h:outputText value="#{msgs.TAX_VALIDITY}" />
+						</td>
+						<td>
+							<h:inputText value="#{commonBean.searchDO.taxValidity}" id="taxDate"  onfocus="populateDate(this.id)" maxlength="10"/>
+						</td>
+						<td style="padding-left:200px">
+							<h:outputText value="#{msgs.AUTH_VALIDITY}" />
+						</td>
+						<td>
+							<h:inputText value="#{commonBean.searchDO.authValidity}" id="authDate"  onfocus="populateDate(this.id)" maxlength="10"/>
+						</td>
+					</tr>
+					<tr>
+						<td style="padding-left:30px">
+							<h:outputText value="#{msgs.PERMIT_VALIDITY}" />
+						</td>
+						<td>
+							<h:inputText value="#{commonBean.searchDO.permitValidity}" id="permitDate"  onfocus="populateDate(this.id)" maxlength="10"/>
+						</td>
+						<td style="padding-left:200px">
+							<h:outputText value="#{msgs.OWNER_MOBILE_NO}" />
+						</td>
+						<td>
+							<h:inputText value="#{commonBean.searchDO.ownerMobileNum}" maxlength="10"/>
+						</td>
+					</tr>
+					<tr>
+						<td style="padding-left:30px;padding-top:5px" >
+						</td>
+						<td style="padding-top:5px">
+							<h:commandLink id="insert" styleClass="button" action="#{commonBean.search}">
+										<span><h:outputText value="Search"></h:outputText>
+										</span>
+							</h:commandLink>
+							<h:commandLink id="reset" styleClass="button" action="#{commonBean.reset}">
+								<f:param name="reset" value="search" /> 
+								<span><h:outputText value="Reset"></h:outputText>
+								</span>
+							</h:commandLink>
+						</td>
+						<td  colspan="2" style="padding-left:90px;padding-top:18px" align="right">
+							<h:outputText value="Date should be in DD/MM/YYYY format" style="color: red;"/>
+						</td>
+					</tr>
+				</table>
+			<h:panelGroup rendered="true">
+				<table class="sorttable">
+					<thead>
+						<tr>
+								<td colspan="8" style="padding-top:10px;padding-bottom:8px">
+									<u><h:outputText value="Search Result :"  style="font-size: 1.5em;color: red;"/></u>
+								</td>
+						</tr>
+						<tr>
+						
+							<h:commandLink actionListener="#{commonBean.sortAction}" 
+								rendered="#{commonBean.sortField == 'regNum' &amp;&amp; commonBean.sortImage == 'tableColHeaderSortAsc'}">
+								<th rowspan="2" width="10%" style="cursor: hand;position:relative;background: #666 url(../resources/images/bgTableColHeadTallSortAsc111.gif) no-repeat top right;border: 1px solid #8DC243;color: #fff;font-weight: bold;padding: 6px 10px;line-height: 2.10em;text-align: center;vertical-align: bottom;" title="ascending">
+									<f:param name="sortField" value="regNum" />
+									 <h:outputText id="regNum1" value="Registration No" />
+								</th>
+								</h:commandLink>
+							<h:commandLink actionListener="#{commonBean.sortAction}"
+								 rendered="#{commonBean.sortField == 'regNum' &amp;&amp;  commonBean.sortImage == 'tableColHeaderSortDesc'}">
+								<th rowspan="2" width="10%" style="cursor: hand;position:relative;background: #666 url(../resources/images/bgTableColHeadTallSortDesc111.gif) no-repeat top right;border: 1px solid #8DC243;color: #fff;font-weight: bold;padding: 6px 10px;line-height: 2.10em;text-align: center;vertical-align: bottom;" title="descending">
+									<f:param name="sortField" value="regNum" /> 
+									<h:outputText id="regNum2" value="Registration No" />
+								</th>
+							</h:commandLink>
+							<h:commandLink actionListener="#{commonBean.sortAction}"
+								rendered="#{commonBean.sortField != 'regNum'}">
+								<th rowspan="2" width="10%" style="cursor: hand;position:relative;background: #666 url(../resources/images/bgTableColHeadTallSort.gif) no-repeat top right;border: 1px solid #8DC243;color: #fff;font-weight: bold;cursor: hand;line-height: 2.10em;text-align: center;vertical-align: bottom;">
+									<f:param name="sortField" value="regNum" /> 
+									<h:outputText id="regNum3" value="Registration No" />
+								</th>
+							</h:commandLink>
+							<h:commandLink actionListener="#{commonBean.sortAction}" 
+								rendered="#{commonBean.sortField == 'ownername' &amp;&amp; commonBean.sortImage == 'tableColHeaderSortAsc'}">
+								<th rowspan="2" width="10%" style="cursor: hand;position:relative;background: #666 url(../resources/images/bgTableColHeadTallSortAsc111.gif) no-repeat top right;border: 1px solid #8DC243;color: #fff;font-weight: bold;padding: 6px 10px;line-height: 2.10em;text-align: center;vertical-align: bottom;" title="ascending">
+									<f:param name="sortField" value="ownername" />
+									 <h:outputText id="ownername1" value="Owner First Name" />
+								</th>
+								</h:commandLink>
+							<h:commandLink actionListener="#{commonBean.sortAction}"
+								 rendered="#{commonBean.sortField == 'ownername' &amp;&amp;  commonBean.sortImage == 'tableColHeaderSortDesc'}">
+								<th rowspan="2" width="10%" style="cursor: hand;position:relative;background: #666 url(../resources/images/bgTableColHeadTallSortDesc111.gif) no-repeat top right;border: 1px solid #8DC243;color: #fff;font-weight: bold;padding: 6px 10px;line-height: 2.10em;text-align: center;vertical-align: bottom;" title="descending">
+									<f:param name="sortField" value="ownername" /> 
+									<h:outputText id="ownername2" value="Owner First Name" />
+								</th>
+							</h:commandLink>
+							<h:commandLink actionListener="#{commonBean.sortAction}"
+								rendered="#{commonBean.sortField != 'ownername'}">
+								<th rowspan="2" width="10%" style="cursor: hand;position:relative;background: #666 url(../resources/images/bgTableColHeadTallSort.gif) no-repeat top right;border: 1px solid #8DC243;color: #fff;font-weight: bold;cursor: hand;line-height: 2.10em;text-align: center;vertical-align: bottom;">
+									<f:param name="sortField" value="ownername" /> 
+									<h:outputText id="ownername3" value="Owner First Name" />
+								</th>
+							</h:commandLink>
+						
+							<th>
+								<h:outputText value="Fitness Expire Validity" />
+							</th>
+							<th>
+								<h:outputText value="Insurance Expire Validity" />
+							</th>
+							<th>
+								<h:outputText value="Tax Validity" />
+							</th>
+							<th>
+								<h:outputText value="Auth Validity" />
+							</th>
+							<th>
+								<h:outputText value="Permit Validity" />
+							</th>
+							<th>
+								<h:outputText value="Owner Mobile No" />
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+							<ui:fragment
+								rendered="#{empty commonBean.searchList}">
+								<tr>
+									<td colspan="8"><h:outputText value="#{msgs.NO_DATA_FOUND}" /></td>
+								</tr>
+							</ui:fragment>
+							
+							<ui:repeat 	value="#{commonBean.searchList}" var="searchDo" rendered="#{!empty commonBean.searchList}"  varStatus="row">
+								<tr>
+									<td style="#{row.index%2==0 ?' background-color: #FFFFFF; ':'background-color: #F2F7E1; '}">
+										<h:commandLink   action="#{commonBean.getUpdate}">
+											<h:outputText value="#{searchDo.regNum}" style="cursor: hand;width:100px"/>
+											<f:param name="update" value="#{searchDo.regNum}" /> 
+								 		</h:commandLink>
+									</td>
+									<td style="#{row.index%2==0 ?' background-color: #FFFFFF; ':'background-color: #F2F7E1; '}">
+										<h:outputText value="#{searchDo.ownername}" style="width:100px"/>
+									</td>
+									<td style="#{row.index%2==0 ?' background-color: #FFFFFF; ':'background-color: #F2F7E1; '}">
+										<h:outputText value="#{searchDo.fitnessValidity}" />
+									</td>
+									<td style="#{row.index%2==0 ?' background-color: #FFFFFF; ':'background-color: #F2F7E1; '}">
+										<h:outputText value="#{searchDo.insuranceValidity}" />
+									</td>
+									<td style="#{row.index%2==0 ?' background-color: #FFFFFF; ':'background-color: #F2F7E1; '}">
+										<h:outputText value="#{searchDo.taxValidity}" />
+									</td>
+									<td style="#{row.index%2==0 ?' background-color: #FFFFFF; ':'background-color: #F2F7E1; '}">
+										<h:outputText value="#{searchDo.authValidity}" />
+									</td>
+									<td style="#{row.index%2==0 ?' background-color: #FFFFFF; ':'background-color: #F2F7E1; '}">
+										<h:outputText value="#{searchDo.permitValidity}" />
+									</td>
+									<td style="#{row.index%2==0 ?' background-color: #FFFFFF; ':'background-color: #F2F7E1; '}">
+										<h:outputText value="#{searchDo.ownerMobileNum}" />
+									</td>
+								</tr>
+							
+							</ui:repeat>
+					</tbody>
+				</table>
+				</h:panelGroup>
+				<h:panelGroup	rendered="#{commonBean.paginationHandlerBean.totalRecordCount > 10 }">
+					<widget:pagination value="#{commonBean}" />
+				</h:panelGroup>
+			</div>
+			</h:form>
+		</div>
+	 
+	</ui:define>
+</ui:composition>
+</html>

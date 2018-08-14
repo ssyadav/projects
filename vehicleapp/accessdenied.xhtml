@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:widget="http://java.sun.com/jsf/composite/widget">
+
+<ui:composition template="template/layout.xhtml">
+<ui:param name="pageTitle" value="Application Error" />
+	 <ui:define name="content">
+		<div id="content">
+			<h:form>
+			<div style="padding-top:35px;">
+					<h:outputText style="font-size:2.0em;font-weight:normal;" value="Application Error" />
+				<br/>
+				<br/>
+					<hr style="color:#A5CF63;height:3px"/>
+				<br/>
+				<br/>
+				<br/>
+				<h:outputText style="font-size:1.5em;font-weight:normal;padding-bottom:10px" value="Problem" />
+				<br></br>
+				<p style="padding-top:10px">Our Apologies!  You do not have access to this page.</p>
+				<br/>
+				<p>Try these options:
+				<ul class="bulleted">
+				<li>If you typed in the URL yourself, please make sure the spelling is correct.</li>
+				<li>Please return to the previous page and try another link.</li>
+				<li>Please return to this <h:commandLink   action="login" value="application home page"/>  and try another link.</li>
+				<li>Please contact the  Application Administrator to report your security needs.</li>
+				</ul>
+				</p>
+			</div>
+			</h:form>
+		</div>
+	 
+	</ui:define>
+</ui:composition>
+</html>

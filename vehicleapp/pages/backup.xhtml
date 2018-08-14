@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<ui:composition template="../template/layout.xhtml">
+
+<ui:param name="pageTitle" value="#{msgs.TITLE}" />
+	 <ui:define name="content">
+	 	<div id="breadCrums">
+	 		<ul>
+				<ui>
+				<h:outputLink id="link1" value="../pages/insertsuccess.xhtml">
+					<h:outputText value="#{msgs.COMMON_CRUM_PAGE}" />
+				</h:outputLink>
+				</ui>
+				<ui>
+					<h:outputText value="#{msgs.twoSpace}" escape="false" />
+					<h:outputText value=">>" />
+					<h:outputText value="#{msgs.twoSpace}" escape="false" />
+					<h:outputText value="Back-up" />
+				</ui>
+			</ul>
+		</div>
+		<div id="content">
+				<h:form id="backupForm">		
+			<div id="searchtable">
+				<table class="searchtable">
+					<tr>
+						<td style="padding-left:25px;padding-top:20px">
+							<h:outputText value="Please take your data back-up every day/week/month and save the excle file other then the operating 
+							system installed drive.This file will be required to store all your data into database."  style="font-size: 1.5em;color: red;"/><br></br><br></br>
+						</td>
+					</tr>
+					<tr>
+						<td style="padding-left:25px">
+							<h:outputText value="click the below button to take the back-up"  style="font-size: 1.5em;color: red;"/>
+						</td>
+					</tr>
+					<tr>
+						<td style="padding-left:30px;" >
+							<h:commandLink id="insert" styleClass="button" action="#{commonBean.backUp}">
+										<span><h:outputText value="Back-up"></h:outputText>
+										</span>
+							</h:commandLink>
+						</td>
+					</tr>
+				</table>
+				
+					
+			</div>
+			
+			
+			<div>
+			</div>
+				
+			<div>		
+				<!--<h:panelGroup rendered="#{bannerSummaryBean.bSearchDO.showResult}">
+					<ui:include src="bannersummarydetails.xhtml" />
+			<h:panelGroup
+				rendered="#{bannerSummaryBean.paginationHandlerBean.totalRecordCount > 25 }">
+				
+				<widget:pagination value="#{bannerSummaryBean}" />
+
+			</h:panelGroup>
+				</h:panelGroup>-->
+			</div>
+			
+			</h:form>
+		</div>
+	 
+	</ui:define>
+</ui:composition>
+</html>

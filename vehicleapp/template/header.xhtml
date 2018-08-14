@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<ui:composition>
+<div id="header">
+			<div id="topBand">
+				<p id="welcome"><h:outputText value="Welcome #{loginBean.userId}" /></p>
+				<p class="links">
+					<a href="../pages/help.xhtml" title="Help">
+						<h:outputText value="#{msgs.HELP}" /></a>
+					<span>|</span>
+					<a href="" title="Logout" ><h:outputLink value="../logout.xhtml" onclick="if (!confirm('Do you really want to logout? ')) return false;">
+					<h:outputText value="#{msgs.LOGOUT}" /></h:outputLink></a>
+				</p>
+			</div>
+			<h1 title="IPG Scorecard">
+			    <a href="#">
+					<img src="../resources/images/logoMySupervalu.gif"></img>
+				</a>
+			</h1>
+			
+			<h5><span id="pagename"><h:outputText value="#{msgs.twoSpace}" escape="false"/>
+			<div> 
+				<h:outputText value="#{msgs.twoSpace}" escape="false"/>
+				#{pageTitle}
+			</div></span></h5>
+		     <ul id="navigation">
+				<li>
+				<h:form id="getsearchpagefrom">
+					<h:commandLink  id="getsearchpage" action="#{commonBean.getSearchPage}" style="background-image: url('../resources/images/tabPurple.gif');" title="Click here to search a record">
+							<span><h:outputText value="#{msgs.SEARCH}" style="padding-left:30px;padding-top:15px"/></span>
+					</h:commandLink>
+				</h:form>
+					<!--<a	style="background-image: url('../resources/images/tabPurple.gif');"
+						href="../pages/search.xhtml"
+						title="Search">
+						<span><h:outputText value="#{msgs.SEARCH}" style="padding-left:30px;padding-top:15px"/></span>
+					</a>
+				--></li>
+				<li>
+					<h:form id="getinsertpagefrom">
+						<h:commandLink  id="getinsertpage" action="#{commonBean.getInsertPage}" style="background-image: url('../resources/images/tabLightBlue.gif');" title="click here to insert a record">
+							<f:param name="reset" value="insert" />
+								<span><h:outputText value="#{msgs.INSERT}" style="padding-left:30px;padding-top:15px"/></span>
+						</h:commandLink>
+					</h:form>
+					<!--<a	style="background-image: url('../resources/images/tabLightBlue.gif');"
+						href="../pages/insert.xhtml"
+						title="Insert">
+						<span><h:outputText value="#{msgs.INSERT}" style="padding-left:30px;padding-top:15px"/></span>
+					</a>
+				--></li>
+				<li>
+					<h:form id="getbackuppagefrom">
+						<h:commandLink id="getbackup"  action="#{commonBean.backUp}" style="background-image: url('../resources/images/tabLightOrange.gif');" title="Click here to take back-up of all data">
+							<span><h:outputText value="Back-up" style="padding-left:27px;padding-top:25px"/></span>
+						</h:commandLink>
+					</h:form>
+					
+				</li>
+				<li>
+					<a  id="svulink" href="">
+					</a>
+				</li>
+			</ul> 
+		</div>
+</ui:composition>
+</html>
+
+

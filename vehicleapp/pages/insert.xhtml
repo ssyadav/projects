@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<ui:composition template="../template/layout.xhtml">
+
+<ui:param name="pageTitle" value="#{msgs.TITLE}" />
+	 <ui:define name="content">
+	 	<div id="breadCrums">
+	 		<ul>
+				<ui>
+				<h:outputLink id="link1" value="../pages/insert.xhtml">
+					<h:outputText value="#{msgs.COMMON_CRUM_PAGE}" />
+				</h:outputLink>
+				</ui>
+				<ui>
+					<h:outputText value="#{msgs.twoSpace}" escape="false" />
+					<h:outputText value=">>" />
+					<h:outputText value="#{msgs.twoSpace}" escape="false" />
+					<h:outputText value="Insert" />
+				</ui>
+			</ul>
+		</div>
+		<div id="content">
+		<h:form id="insertForm">
+			 <h:inputHidden id="user" value="#{loginBean.sessionUserId}"></h:inputHidden>
+			<div id="messagingContainer" style="padding-top:10px">
+				<h:messages id="homeErrorForm" style="color:red" errorClass="error" infoClass="success" warnClass="warning"/>
+				 <div id="messaging"></div>  
+				
+			</div>
+			
+			<div id="searchtable">
+				<table class="searchtable">
+							<tr>
+						<td style="padding-left:30px">
+							<h:outputText value="#{msgs.REGNUM}" maxlength="10"/>
+							<font color="red">*</font>
+						</td>
+						<td>
+							<h:inputText value="#{commonBean.insertDO.regNum}" id="regNo" maxlength="2000"
+								style="#{commonBean.insertDO.regNumError ?' border-color:red':''}" />
+						</td>
+						<td style="padding-left:200px">
+							<h:outputText value="#{msgs.OWNERNAME}" />
+						</td>
+						<td>
+							<h:inputText value="#{commonBean.insertDO.ownername}" maxlength="2000"/>
+						</td>
+					</tr>
+					<tr>
+						<td style="padding-left:30px">
+							<h:outputText value="#{msgs.FITNESS_VALIDITY}" />
+						</td>
+						<td>
+							<h:inputText value="#{commonBean.insertDO.fitnessValidity}" id="fExpDate"  onfocus="populateDate(this.id)" maxlength="10"
+								style="#{commonBean.insertDO.fitnessValidityError ?' border-color:red':''}"/>
+						</td>
+						<td style="padding-left:200px">
+							<h:outputText value="#{msgs.INSURANCE_VALIDITY}" />
+						</td>
+						<td>
+							<h:inputText value="#{commonBean.insertDO.insuranceValidity}" id="iExpdate"  onfocus="populateDate(this.id)" maxlength="10"
+								style="#{commonBean.insertDO.insuranceValidityError ?' border-color:red':''}"/>
+						</td>
+					</tr>
+					<tr>
+						<td style="padding-left:30px">
+							<h:outputText value="#{msgs.TAX_VALIDITY}" />
+						</td>
+						<td>
+							<h:inputText value="#{commonBean.insertDO.taxValidity}" id="taxDate"  onfocus="populateDate(this.id)" maxlength="10"
+								style="#{commonBean.insertDO.taxValidityError ?' border-color:red':''}"/>
+						</td>
+						<td style="padding-left:200px">
+							<h:outputText value="#{msgs.AUTH_VALIDITY}" />
+						</td>
+						<td>
+							<h:inputText value="#{commonBean.insertDO.authValidity}" id="authDate"  onfocus="populateDate(this.id)" maxlength="10"
+								style="#{commonBean.insertDO.authValidityError ?' border-color:red':''}"/>
+						</td>
+					</tr>
+					<tr>
+						<td style="padding-left:30px">
+							<h:outputText value="#{msgs.PERMIT_VALIDITY}" />
+						</td>
+						<td>
+							<h:inputText value="#{commonBean.insertDO.permitValidity}" id="permitDate"  onfocus="populateDate(this.id)" maxlength="10" 
+								style="#{commonBean.insertDO.permitValidityError ?' border-color:red':''}"/>
+						</td>
+						<td style="padding-left:200px">
+							<h:outputText value="#{msgs.OWNER_MOBILE_NO}" />
+						</td>
+						<td>
+							<h:inputText value="#{commonBean.insertDO.ownerMobileNum}" maxlength="10" style="#{commonBean.insertDO.ownerMobileNumError ?' border-color:red':''}"/>
+						</td>
+					</tr>
+					<tr>
+						<td style="padding-left:30px;padding-top:5px" >
+						</td>
+						<td style="padding-top:5px">
+							<h:commandLink id="insert" styleClass="button" action="#{commonBean.insert}">
+										<span><h:outputText value="Insert"></h:outputText>
+										</span>
+							</h:commandLink>
+							<h:commandLink id="reset" styleClass="button" action="#{commonBean.reset}">
+								<f:param name="reset" value="insert" /> 
+								<span><h:outputText value="Reset"></h:outputText>
+								</span>
+							</h:commandLink>
+						</td>
+						<td  colspan="2" style="padding-left:90px;padding-top:18px" align="right">
+							<h:outputText value="Date should be in DD/MM/YYYY format" style="color: red;" />
+						</td>
+					</tr>
+				</table>
+				
+					
+			</div>
+			
+			
+			<div>
+			</div>
+				
+			<div>		
+				<!--<h:panelGroup rendered="#{bannerSummaryBean.bSearchDO.showResult}">
+					<ui:include src="bannersummarydetails.xhtml" />
+			<h:panelGroup
+				rendered="#{bannerSummaryBean.paginationHandlerBean.totalRecordCount > 25 }">
+				
+				<widget:pagination value="#{bannerSummaryBean}" />
+
+			</h:panelGroup>
+				</h:panelGroup>-->
+			</div>
+			
+		</h:form>	
+		</div>
+	 
+	</ui:define>
+</ui:composition>
+</html>

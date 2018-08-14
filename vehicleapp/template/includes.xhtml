@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"   
+	  xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      >
+      
+	    <ui:composition>
+			 <h:head>
+				<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+				<meta name="author" content="superValue" />
+				<meta name="copyright" content="" />
+				<meta name="description" content="" />
+				<meta name="mssmarttagspreventparsing" content="true" />
+				<meta http-equiv="imagetoolbar" content="false" />
+				
+				<title>Welcome to #{pageTitle}</title>
+				<link rel="StyleSheet" href="../resources/css/custDevBA.css" type="text/css" media="all"/>
+				<!-- Jquery CSS  -->
+				<link rel="StyleSheet" href="../resources/css/jquerycss/easyui.css" type="text/css" media="all"/>
+				<link rel="StyleSheet" href="../resources/css/jquerycss/jquery-ui-1.7.2.custom.css" type="text/css" media="all"/>
+				<link rel="StyleSheet" href="../resources/css/jquerycss/jquery.datepick.css" type="text/css" media="all"/>
+				<link rel="stylesheet" href="../resources/css/jquery.ui.all.css"/>
+				<script type="text/javascript" src="../resources/js/global.js"></script>
+				<script type="text/javascript" src="../resources/js/common.js"></script>
+				<script type="text/javascript" src="../resources/js/vahan.js"></script>
+				
+				
+				<!-- Jquery JS  -->
+				<script type="text/javascript" src="../resources/js/jquery/jquery-1.4.4.min.js"></script> 
+				<script type="text/javascript" src="../resources/yui/jquery/yahoo-dom-event.js"></script>
+				<script type="text/javascript" src="../resources/yui/jquery/element-min.js"></script>
+				<script src="../resources/js/jquery/jquery-1.5.1.js"></script>
+				<script src="../resources/js/jquery/jquery.ui.core.js"></script>
+				<script src="../resources/js/jquery/jquery.ui.widget.js"></script>
+				<script src="../resources/js/jquery/jquery.ui.datepicker.js"></script>
+				<script src="../resources/js/jquery/jquery.blockUI.js"></script>
+				<script type="text/javascript">
+			
+						function populateDate(id) {
+						      $(function() {            
+						            var date = document.getElementById(id); 
+						            $(date).datepicker({ dateFormat: 'dd/mm/yy' });
+						      });
+						 }
+				</script>
+				
+				
+				
+			</h:head>
+			
+				
+	    </ui:composition>
+</html>
+
+

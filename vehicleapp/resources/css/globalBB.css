@@ -1,0 +1,642 @@
+/*----------------------------------------------------------------------------------------------------
+Service Level Dashboard Global CSS
+Author : Maren Andersen - maren.a.andersen@supervalu.com
+
+Created : 07/02/09
+----------------------------------------------------------------------------------------------------*/
+html,body {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+}
+
+body {
+	background: #fff url(../images/bgBody.gif) repeat;
+	color: #333; /* Default font color */
+	font: 62.5% Arial, Helvetica, sans-serif; /* Base size = 10px */
+	text-align: center;
+}
+
+/* ----- Base Links ----- */
+a {
+	color: #009bc0;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+a:link {
+	color: #009bc0;
+	outline: none;
+	text-decoration: none;
+}
+
+a:visited {
+	color: #009bc0;
+	outline: none;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #004882;
+	outline: none;
+	text-decoration: none;
+}
+
+a:active {
+	color: #009bc0;
+	outline: none;
+	text-decoration: none;
+}
+
+a:focus {
+	color: #009bc0;
+	outline: none;
+	text-decoration: none;
+}
+
+:focus {
+	-moz-outline-style: none;
+}
+
+/* ----- Base Headings ----- */
+h1 {
+	font-size: 3.3333em;
+	line-height: 46px;
+	font-weight: bold;
+	letter-spacing: -0.03em;
+	color: #f7941d;
+	float: left;
+	width: 415px;
+	background: #fff url(../images/bgHeader.gif) no-repeat bottom left;
+}
+
+h2 {
+	font-size: 1.6667em;
+	font-weight: bold;
+	letter-spacing: -0.04em;
+	color: #666;
+}
+
+/* ----- Buttons ----- */
+a.button {
+	overflow: hidden;
+	background: transparent url(../images/bgButton.gif) no-repeat right
+		-87px;
+	color: #fff !important;
+	display: block;
+	float: left;
+	font-size: 11px;
+	font-weight: bold;
+	height: 22px;
+	margin-right: 6px;
+	padding-right: 6px;
+	text-decoration: none;
+	border: 0;
+}
+
+span.button {
+	overflow: hidden;
+	background: transparent url(../images/bgButton.gif) no-repeat right
+		-87px;
+	display: block;
+	float: left;
+	font-size: 11px;
+	font-weight: bold;
+	height: 22px;
+	margin-right: 6px;
+	padding-right: 6px;
+	text-decoration: none;
+	border: 0;
+	color: #D9D9D9;
+	cursor: hand;
+}
+
+a.button:hover {
+	color: #ffffbe !important;
+}
+
+a.button:active {
+	background-position: right -130px;
+	color: #fff;
+	outline: none;
+}
+
+a.button span,span.button span {
+	background: transparent url(../images/bgButton.gif) no-repeat left -1px;
+	display: block;
+	line-height: 14px;
+	padding: 3px 6px 5px 11px;
+}
+
+a.button:active span,span.button:active span {
+	background-position: left -44px;
+}
+
+a.buttonWait {
+	background: transparent url(../images/animWorking.gif) no-repeat -1px;
+	display: inline;
+	float: left;
+	width: 35px;
+	height: 30px;
+	margin-right: 6px;
+	padding-right: 6px; /* Sliding doors padding */
+}
+
+/* ----- Miscellaneous ----- */
+strong {
+	font-weight: bold;
+}
+
+.displayNone {
+	display: none !important;
+}
+
+/* ----- Layout ----- */
+#messageWrapper {
+	background: #fff url(../images/bgContent.gif) repeat-y;
+	font-size: 1.2em;
+	margin: 10px auto;
+	text-align: left;
+	width: 453px;
+}
+
+#contentWrapper {
+	background: #fff url(../images/bgContent.gif) repeat-y;
+	font-size: 1.2em;
+	margin: 10px auto;
+	text-align: left;
+	width: 953px;
+}
+
+#contentTop {
+	background: #fff url(../images/bgContentTop.gif) no-repeat bottom left;
+	clear: both;
+	height: 15px;
+	width: 953px;
+}
+
+#contentBottom {
+	background: #fff url(../images/bgContentBottom.gif) no-repeat bottom
+		left;
+	clear: both;
+	height: 15px;
+	width: 953px;
+}
+
+#content {
+	line-height: 1.5em;
+	margin-left: 20px;
+	width: 910px;
+}
+
+/* ----- Header ----- */
+#header {
+	width: 910px;
+	height: 55px;
+	border-bottom: 1px dashed #bfbfbf;
+}
+
+#header #topLinks {
+	float: right;
+	overflow: hidden;
+	margin-right: -14px;
+	margin-top: 34px;
+}
+
+#header #topLinks li {
+	float: left;
+	border-left: 1px solid #333;
+	padding: 0px 14px 0 7px;
+	margin-left: -7px;
+	line-height: 1.1em;
+}
+
+/* ----- Error & Status Messages ----- */
+#messaging,#status {
+	clear: both;
+	margin: 7px 0;
+}
+
+#messaging ul li,#status ul li {
+	line-height: 1;
+	padding: 5px 5px 6px 30px;
+	margin-bottom: 2px;
+	list-style: none;
+	background-repeat: no-repeat;
+	background-position: 7px 5px;
+}
+
+#messaging ul.Error li,#status ul.Error li {
+	background-image: url(../images/icon_error.gif);
+	background-color: #c00;
+	color: #fff;
+}
+
+#messaging ul.Warning li,#status ul.Warning li {
+	background-image: url(../images/iconWarning.gif);
+	background-color: #f5ee8b;
+	color: #333;
+}
+
+#messaging ul.success li,#status ul.success li {
+	background-image: url(../images/iconSuccess.gif);
+	background-color: #1c6c19;
+	color: #fff;
+}
+
+#messaging ul.General li,#status ul.General li {
+	background-image: url(../images/iconInformation.gif);
+	background-color: #3a5894;
+	color: #fff;
+}
+
+#status .displayNone {
+	display: none;
+}
+
+/* ----- Search Form ----- */
+#searchWrapper {
+	width: 910px;
+	margin-top: 18px;
+	overflow: hidden;
+}
+
+#showHideCriteria {
+	float: left;
+	width: 910px;
+	border-bottom: 1px dashed #bfbfbf;
+}
+
+#searchWrapper p {
+	float: left;
+	font-size: 0.9167em;
+	margin: 18px 0 3px 0;
+}
+
+#searchWrapper #showHideSearchCriteria {
+	float: right;
+	font-size: 0.9167em;
+	margin-top: 18px;
+}
+
+#searchForm {
+	float: left;
+	width: 910px;
+	background: #f5edcd url(../images/bgSearch.gif) repeat-y top left;
+}
+
+#searchForm p {
+	width: 120px;
+	font-size: 1.1667em;
+	font-weight: bold;
+	padding-left: 10px;
+	margin-top: 10px;
+}
+
+#searchForm fieldset {
+	float: left;
+	width: 276px;
+	padding: 10px 0;
+}
+
+#searchForm #rightFieldSet {
+	width: 390px;
+}
+
+#searchForm #leftFieldSet {
+	width: 370px;
+}
+
+#searchForm a img {
+	margin-left: 3px;
+}
+
+#searchForm label,#searchForm span.legend {
+	font-size: 0.9167em;
+	font-weight: bold;
+	clear: left;
+	display: block;
+	float: left;
+	text-align: right;
+	width: 100px;
+	margin-right: 4px;
+}
+
+#searchForm span#billingDateFields,#searchForm span#viewByFields {
+	float: left;
+	display: block;
+}
+
+#searchForm input,#searchForm select {
+	display: block;
+	float: left;
+	margin: 0 0 6px 0;
+	font-size: 0.9167em;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+#searchForm select,#searchForm #vendor {
+	width: 148px;
+}
+
+#searchForm #billingDate {
+	float: left;
+	width: 326px;
+}
+
+#searchForm #startBillingDate,#searchForm #endBillingDate {
+	width: 50px;
+	display: inline;
+	float: none;
+	padding-left: 3px;
+}
+
+#searchForm #to {
+	width: 25px;
+	padding-left: 10px;
+	padding-bottom: 7px;
+	padding-top: 5px;
+}
+
+#searchForm #vendor { /*clean this up...*/
+	width: 145px;
+	padding-left: 3px;
+}
+
+#searchForm #billingDateFields img {
+	vertical-align: top;
+}
+
+#searchForm #dcType {
+	float: left;
+	width: 150px; /* needed for IE6 hasLayout */
+	margin-bottom: 5px;
+}
+
+#searchForm #dcType input {
+	margin-bottom: 3px;
+	height: 12px;
+	margin-top: 2px;
+}
+
+#searchForm #dcType label,#searchForm #viewBy label {
+	clear: none;
+	width: 40px;
+	font-weight: normal;
+	text-align: left;
+	margin-left: 4px;
+}
+
+#searchForm #viewBy input {
+	clear: both;
+	margin-bottom: 3px;
+	height: 12px;
+	margin-top: 2px;
+}
+
+#searchForm #viewBy label {
+	width: 130px;
+}
+
+/* ----- Pagination ----- */
+.paginationWrapper {
+	position: relative;
+	margin: 16px 0;
+}
+
+.totalItems {
+	font-weight: bold;
+	position: absolute;
+	top: 1px;
+	left: 10px;
+	width: 160px;
+}
+
+.pageNav {
+	text-align: center;
+	line-height: 2.6667em;
+}
+
+.pageShow {
+	position: absolute;
+	text-align: right;
+	top: 1px;
+	right: 10px;
+	width: 220px;
+}
+
+.pageShow span {
+	font-weight: bold;
+}
+
+/* ----- Tables ----- */
+#resultsWrapper {
+	width: 908px;
+	overflow-x: auto;
+	overflow-y: hidden;
+	padding: 1px;
+	padding-bottom: 16px;
+}
+
+#btnDownload,#btnPrint,#btnGo {
+	float: right;
+	margin: 0 0 3px 0;
+}
+
+#btnPrint {
+	margin-right: 4px;
+}
+
+#btnGo {
+	margin-right: 6px;
+}
+
+table {
+	clear: both;
+	width: 100%;
+	border-collapse: collapse;
+}
+
+table thead tr th {
+	background: #666 url(../images/bgTableColHead.gif) repeat-x top left;
+	border: 1px solid #ccc;
+	color: #fff;
+	font-weight: bold;
+	padding: 6px 10px;
+	line-height: 1.15em;
+	text-align: center;
+	vertical-align: bottom;
+}
+
+table thead tr th.alignLeft {
+	text-align: left;
+}
+
+table.tall thead tr th {
+	background: #666 url(../images/bgTableColHeadTall.gif) repeat-x top
+		left;
+}
+
+table.sort thead tr th {
+	background: #666 url(../images/bgTableColHeadTallSort.gif) no-repeat
+		top right;
+	padding: 6px 25px 6px 10px;
+	cursor: pointer;
+}
+
+table.tall thead tr th.light {
+	background: #666 url(../images/bgTableColHeadTallLight.gif) repeat-x
+		top left;
+}
+
+table.sort thead tr th.light {
+	background: #666 url(../images/bgTableColHeadTallSortLight.gif)
+		no-repeat top right;
+}
+
+table.tall thead tr th.tableColHeaderSortAsc {
+	background: #666 url(../images/bgTableColHeadTallSortAsc.gif) no-repeat
+		top right;
+}
+
+table.tall thead tr th.tableColHeaderSortDesc {
+	background: #666 url(../images/bgTableColHeadTallSortDesc.gif) no-repeat
+		top right;
+}
+
+table.tall thead tr th.noSort {
+	background: #666 url(../images/bgTableColHeadTall.gif) repeat-x top left
+		;
+	padding: 6px 10px;
+	cursor: default;
+}
+
+table tbody tr {
+	background-color: #fff;
+}
+
+table tbody tr.odd {
+	background-color: #ffffd9;
+}
+
+table tbody tr.even {
+	background-color: #fff;
+}
+
+table tbody tr td {
+	border: 0px solid #ccc;
+	padding: 4px 8px;
+	text-align: left;
+}
+
+table thead tr td {
+	border: 1px solid #ccc;
+	padding: 4px 8px;
+	text-align: right;
+}
+
+.fixedColumn {
+	width: 150px;
+}
+
+.summary td {
+	font-weight: bold;
+}
+
+table tbody tr td.alignLeft {
+	text-align: left;
+}
+
+table tbody tr td.alignCenter {
+	text-align: center;
+}
+
+/* ----- Footer ----- */
+#footer {
+	border-top: 1px dashed #bfbfbf;
+	font-size: 0.9167em;
+	margin: 32px 0 0 0;
+}
+
+#footer p {
+	float: left;
+	padding-top: 6px;
+	padding-bottom: 7px;
+	width: 350px;
+}
+
+#footer #bottomLinks {
+	float: right;
+	overflow: hidden;
+	margin-right: -14px;
+	margin-top: 9px;
+}
+
+#footer #bottomLinks li {
+	float: left;
+	border-left: 1px solid #333;
+	padding: 0px 14px 0 7px;
+	margin-left: -7px;
+	line-height: 1.1em;
+}
+
+form fieldset div {
+	float: left;
+}
+
+form fieldset div.buttons {
+	padding-top: 5px;
+}
+
+a img.calendarIcon {
+	position: relative;
+	top: -10px;
+}
+
+/* ----- Radio ----- */
+table.radio {
+	width: 180px;
+}
+
+table.radio td {
+	border: none;
+	background: transparent;
+}
+
+/* ----- inputText ----- */
+.inputText {
+	width: 50px;
+}
+
+.buttonSV {
+	background: transparent url(../images/bgButton.gif) no-repeat left -1px;
+	display: block;
+}
+
+.rich-tab-active {
+	background-image: url(../images/bgButton.gif);
+	background-repeat: repeat-x;
+	font-weight: bold;
+	color: #000000;
+	border-top: 1px solid #c8c8c8;
+}
+
+.rowColor {
+	background-color: #FFFFD9;
+}
+
+.row2Color {
+	background-color: #FFFFFF;
+}
+
+.myColumnClass {
+	width: 100px;
+	float: left;
+}
+
+.myColumnClass1 {
+	width: 500px;
+	float: left;
+	color: red;
+	background-color: red;
+}

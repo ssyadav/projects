@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:widget="http://java.sun.com/jsf/composite/widget">
+<ui:composition template="template/layout.xhtml">
+	<ui:define name="includes">
+		<h:head>
+				<link rel="StyleSheet" href="resources/css/custDevBA.css" type="text/css" media="all"/>
+					<script type="text/javascript" src="resources/js/vahan.js"></script>
+					<script type="text/javascript" src="resources/yui/jquery/yahoo-dom-event.js"></script>
+				<script type="text/javascript" src="resources/yui/jquery/element-min.js"></script>
+				<title>Welcome to VHR Tool</title>
+				</h:head>
+	</ui:define>
+	 <ui:define name="header">
+		<div id="header">
+			<div id="topBand">
+				<p id="welcome">Welcome</p>
+				<p class="links">
+					<a
+						href="#"
+						title="Help"> <h:outputText value="#{msgs.HELP}" />
+					</a>
+				</p>
+			</div>
+			<h1 title="Common Web">
+				<a href="">
+				 <img src="resources/images/logoMySupervalu.gif"></img>
+				 <h:outputText value="#{msgs.twoSpace}" escape="false" />
+				</a>
+			</h1>
+			<h5>
+				<span id="pagename">
+				<h:outputText value="#{msgs.twoSpace}"	escape="false" />
+					<div>
+						<h:outputText value="#{msgs.TITLE}" />
+					</div>
+				</span>
+			</h5>
+			
+
+		</div>
+	</ui:define>
+	 <ui:define name="content">
+		<div id="content">
+		<h:form id="loginForm">
+				<div style="min-height: 500px;">
+				<h:panelGroup rendered="#{not loginBean.authorized}">
+				<br />
+				<h:outputText style="font-size:2.0em;font-weight:normal;color:red"
+							value="User is not authorized" /></h:panelGroup>
+					<div style="padding: 10px; padding-top: 35px">
+						<h:outputText style="font-size:2.0em;font-weight:normal;color:gray"
+							value="Welcome to VEHICLE HISTORY REPORTS TOOL" />
+						<br /> <br />
+						<hr style="color: #A5CF63; height: 3px" />
+						<br /> 
+						<h:messages id="homeErrorForm" style="color:red;font-size: 2.0em;" errorClass="error" infoClass="success" warnClass="warning"/>
+						<br />
+						<div id="noStyle" style="width: 30%;">
+							<h:panelGrid columns="1">
+								<h:outputLabel value="User Name" />
+								<h:inputText id="userId" value="#{loginBean.userId}"  size="20" />
+								<!-- <h:message for="userId" /> -->
+								<h:outputText value="Password" />
+								<h:inputSecret id="password" value="#{loginBean.password}" onkeypress="{if (event.keyCode==13)loginfocus();}" size="22" />
+								<!-- <h:message for="password" tooltip="Invalid password"/> -->
+
+								<div style="margin-top: 10px;">
+									<h:commandLink id="loginbutton" styleClass="button" action="#{loginBean.performLogin}" > 
+									<span><h:outputText value="Login"></h:outputText>
+										</span>
+									</h:commandLink>
+
+								</div>
+							</h:panelGrid>
+						</div>
+					</div>
+				</div>
+			</h:form>	
+		</div>
+	</ui:define>
+</ui:composition>
+</html>

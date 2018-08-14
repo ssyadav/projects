@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:widget="http://java.sun.com/jsf/composite/widget">
+
+<ui:composition template="../template/layout.xhtml">
+
+<ui:param name="pageTitle" value="Common Web Home" />
+	 <ui:define name="content">
+	 	<div id="breadCrums">
+	 		<ul>
+				<ui>
+				<h:outputLink id="link1" value="../pages/commonwebHome.xhtml">
+					<h:outputText value="#{msgs.COMMON_CRUM_PAGE}" />
+				</h:outputLink>
+				</ui>
+			</ul>
+		</div>
+		<div id="content">
+		<h:form id="homeForm" >
+			 <h:inputHidden id="user" value="#{loginBean.sessionUserId}"></h:inputHidden>
+			<div id="messagingContainer" style="padding-top:10px">
+				<h:messages id="homeErrorForm" style="color:red" errorClass="error" infoClass="success" warnClass="warning"/>
+				 <div id="messaging"></div>  
+				
+			</div>
+				
+			<div style="padding-bottom:50px;padding-top:30px">
+				<h1><b><u><h:outputText  value="UI Block Example" /></u></b></h1><br></br><br></br>
+				<b><h:outputText style="padding-left:50px;padding-top:20px" value="Country :" /></b>
+				<h:selectOneMenu  value="#{commonBean.selectedCountry}" >
+						<f:selectItem itemLable="" itemValue=""/>
+						<f:selectItems  value="#{commonBean.countryList}" />
+						<f:ajax event="valueChange" onevent="searchFilterCallback"  render="@all" execute="@form" listener="#{commonBean.getState}"></f:ajax>
+				</h:selectOneMenu>
+				<b><h:outputText style="padding-left:20px;" value="States" /></b>
+				<h:selectOneMenu id="state"  value="urValue">
+					<f:selectItem itemLable="" itemValue=""/>
+						<f:selectItems  value="#{commonBean.stateList}" />
+				</h:selectOneMenu>
+			</div>
+			
+			
+		</h:form>	
+		</div>
+	 
+	</ui:define>
+</ui:composition>
+</html>

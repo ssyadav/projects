@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:composite="http://java.sun.com/jsf/composite">
+
+
+<head>
+
+<title></title>
+
+</head>
+
+<body>
+	<composite:interface>
+		<composite:attribute name="value" />
+	</composite:interface>
+	<composite:implementation>
+	
+	<div class="paginationWrapper">
+				<div class="totalItems"><h:outputText
+					value="Items #{cc.attrs.value.paginationHandlerBean.firstRecordNum}-#{cc.attrs.value.paginationHandlerBean.lastRecordNum} of #{cc.attrs.value.paginationHandlerBean.totalRecordCount}" />
+				</div>
+				<!-- End "totalItems" -->
+
+				<div class="pageNav"><ui:repeat id="paginationLinks"
+					value="#{cc.attrs.value.paginationHandlerBean.pageLinks}"
+					var="pageLink">
+					<h:commandLink value="#{pageLink.pageLink}"
+						action="#{cc.attrs.value.paginatationAction}"
+						disabled="#{pageLink.disabled}">
+						<f:param name="page" value="#{pageLink.pageLink}" />
+					</h:commandLink>
+					<h:outputText value=" " />
+				</ui:repeat></div>
+				
+				
+				<!-- End "pageNav" -->
+
+				 <div class="pageShow"><span class="itemsPerPagePanel">Items
+				per page: <ui:repeat id="pageSizes"
+					value="#{cc.attrs.value.paginationHandlerBean.pageSizes}"
+					var="pageSize">
+					<h:commandLink value="#{pageSize}"
+						action="#{cc.attrs.value.pageSizeAction}"
+						disabled="#{cc.attrs.value.paginationHandlerBean.currentPageSize == pageSize}">
+						<f:param name="pageSize" value="#{pageSize}" />
+					</h:commandLink>
+					<h:outputText value=" " />
+				</ui:repeat> </span>
+			</div><!-- End "pageShow" -->
+		</div><!-- End "paginationWrapper" -->
+
+	</composite:implementation>
+
+</body>
+</html>

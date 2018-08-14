@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<ui:composition template="../template/layout.xhtml">
+
+<ui:param name="pageTitle" value="#{msgs.TITLE}" />
+	 <ui:define name="content">
+	 	<div id="breadCrums">
+	 		<ul>
+				<ui>
+				<h:outputLink id="link1" value="../pages/updatesuccess.xhtml">
+					<h:outputText value="#{msgs.COMMON_CRUM_PAGE}" />
+				</h:outputLink>
+				</ui>
+				<ui>
+					<h:outputText value="#{msgs.twoSpace}" escape="false" />
+					<h:outputText value=">>" />
+					<h:outputText value="#{msgs.twoSpace}" escape="false" />
+					<h:outputText value="Update Success" />
+				</ui>
+			</ul>
+		</div>
+		<div id="content">
+			<h:form id="updateSuccessForm">			
+			<div id="searchtable">
+				<table class="searchtable">
+					<tr>
+						<td style="padding-left:450px">
+							<h:outputText value="Data Updated Successfully" style="font-size: 1.4em;color: red;"/>
+						</td>
+					</tr>
+					<tr>
+						<td style="padding-left:450px">
+							<h:graphicImage url="../resources/images/congratulations.gif"></h:graphicImage>
+						</td>
+					</tr>
+					<tr>
+						<td style="padding-left:30px;padding-top:20px" >
+							<h:commandLink id="insert" styleClass="button" action="#{commonBean.getSearchPage}">
+										<span><h:outputText value="Back"></h:outputText>
+										</span>
+							</h:commandLink>
+						</td>
+					</tr>
+				</table>
+				
+					
+			</div>
+			
+			
+			<div>
+			</div>
+				
+		</h:form>			
+			
+		</div>
+	 
+	</ui:define>
+</ui:composition>
+</html>
