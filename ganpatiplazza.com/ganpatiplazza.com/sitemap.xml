@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+<url>
+  <loc>http://www.ganpatiplazza.com/</loc>
+  <lastmod>2015-05-12T18:03:18+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.ganpatiplazza.com/home.html</loc>
+  <lastmod>2015-05-12T18:02:21+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.ganpatiplazza.com/gallery.html</loc>
+  <lastmod>2015-03-21T13:44:22+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.ganpatiplazza.com/rooms.html</loc>
+  <lastmod>2015-03-21T13:41:56+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.ganpatiplazza.com/contacts.html</loc>
+  <lastmod>2015-03-21T13:37:29+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.ganpatiplazza.com/bookroom.php</loc>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.ganpatiplazza.com/map.html</loc>
+  <lastmod>2015-03-21T13:44:27+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+</urlset>
